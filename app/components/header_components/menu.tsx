@@ -16,7 +16,10 @@ const Menu = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="ghost" className={cn("w-10 md:w-auto")}>
+        <Button
+          variant="ghost"
+          className={cn("w-10 text-foreground md:w-auto")}
+        >
           <CircleUserIcon />
           <span className="hidden md:flex">Minha conta</span>
         </Button>
