@@ -50,7 +50,7 @@ const Benefits = () => {
         >
           <CardHeader
             className={cn(
-              "flex max-h-14 min-h-14 min-w-14 max-w-14 items-center justify-center rounded-md bg-blue-100 text-blue-500",
+              "flex max-h-14 min-h-14 min-w-14 max-w-14 items-center justify-center rounded-md bg-secondary text-primary",
             )}
           >
             {item.icon}
