@@ -7,7 +7,7 @@ import { Button } from "@/app/components/ui/button";
 const ProductDetailsButton = ({ id }: { id: string }) => {
   return (
     <Button asChild variant="secondary" className={cn("w-full")}>
-      <Link href={`/product/${id}`}>Ver Projeto</Link>
+      <Link href={`/product/${id}`}>Ver Produto</Link>
     </Button>
   );
 };
