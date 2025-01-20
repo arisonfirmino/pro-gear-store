@@ -1,7 +1,5 @@
 import { getProducts } from "@/app/helpers/getProducts";
 
-import { Separator } from "@/app/components/ui/separator";
-import Header from "@/app/(home)/components/header_components/header";
 import Nav from "@/app/(home)/components/nav";
 import Benefits from "@/app/(home)/components/benefits";
 import ProductsList from "@/app/components/product/products-list";
@@ -19,8 +17,6 @@ const Home = async () => {
 
   return (
     <>
-      <Header />
-      <Separator />
       <Nav />
       <Benefits />
 

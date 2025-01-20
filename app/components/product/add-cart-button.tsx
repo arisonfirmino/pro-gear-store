@@ -4,9 +4,13 @@ import { Button } from "@/app/components/ui/button";
 
 import { ShoppingCartIcon } from "lucide-react";
 
-const AddCartButton = () => {
+interface AddCartButtonProps {
+  variant: "outline" | "default";
+}
+
+const AddCartButton = ({ variant }: AddCartButtonProps) => {
   return (
-    <Button variant="outline" className={cn("w-full")}>
+    <Button variant={variant} className={cn("w-full")}>
       <ShoppingCartIcon />
       Adicionar ao carrinho
     </Button>

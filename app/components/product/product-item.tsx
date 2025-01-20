@@ -69,7 +69,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
           {product.description}
         </CardDescription>
 
-        <AddCartButton />
+        <AddCartButton variant="outline" />
         <ProductDetailsButton id={product.id} />
       </CardContent>
     </Card>
