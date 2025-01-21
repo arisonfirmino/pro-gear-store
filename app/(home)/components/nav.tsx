@@ -1,36 +1,31 @@
+import { db } from "@/app/lib/prisma";
+
+import Link from "next/link";
+
 import { cn } from "@/app/lib/utils";
 
 import { Button } from "@/app/components/ui/button";
 
-import {
-  CableIcon,
-  HeadsetIcon,
-  KeyboardIcon,
-  MonitorIcon,
-  MouseIcon,
-  SquareIcon,
-} from "lucide-react";
+import { CATEGORY_ICON } from "@/app/constants/category-icon";
 
-const Nav = () => {
-  const nav_items = [
-    { category: "Mouses", icon: <MouseIcon /> },
-    { category: "Teclados", icon: <KeyboardIcon /> },
-    { category: "Headsets", icon: <HeadsetIcon /> },
-    { category: "Mousepads", icon: <SquareIcon /> },
-    { category: "Monitores", icon: <MonitorIcon /> },
-    { category: "Acessórios Gamer", icon: <CableIcon /> },
-  ];
+const Nav = async () => {
+  const categories = await db.category.findMany();
 
   return (
     <nav className="flex justify-between md:justify-center md:gap-10">
-      {nav_items.map((item) => (
+      {categories.map((category) => (
         <Button
-          key={item.category}
+          key={category.id}
           variant="ghost"
+          asChild
           className={cn("w-10 uppercase md:w-auto")}
         >
-          <span className="hidden xl:flex">{item.category}</span>
-          <span className="xl:hidden">{item.icon}</span>
+          <Link href={`/category/${category.slug}`}>
+            <span className="hidden xl:flex">{category.name}</span>
+            <span className="xl:hidden">
+              {CATEGORY_ICON[category.slug as keyof typeof CATEGORY_ICON]}
+            </span>
+          </Link>
         </Button>
       ))}
     </nav>
