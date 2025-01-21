@@ -8,15 +8,21 @@ import { Product } from "@prisma/client";
 interface ProductsListProps {
   title: string;
   products: Product[];
+  category: string;
   limit?: number;
 }
 
-const ProductsList = ({ title, products, limit }: ProductsListProps) => {
+const ProductsList = ({
+  title,
+  category,
+  products,
+  limit,
+}: ProductsListProps) => {
   const displayedProducts = limit ? products.slice(0, limit) : products;
 
   return (
     <section className="space-y-2.5">
-      <ProductsListTitle title={title} />
+      <ProductsListTitle title={title} category={category} />
 
       <ul className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
         {displayedProducts.map((product) => (

@@ -36,10 +36,10 @@ export const getProducts = async () => {
     },
   });
 
-  const headsets = await db.product.findMany({
+  const headphones = await db.product.findMany({
     where: {
       category: {
-        slug: "headsets",
+        slug: "headphones",
       },
     },
     orderBy: {
@@ -84,7 +84,7 @@ export const getProducts = async () => {
     deals,
     mouses,
     keyboards,
-    headsets,
+    headphones,
     mousepads,
     monitors,
     accessories,

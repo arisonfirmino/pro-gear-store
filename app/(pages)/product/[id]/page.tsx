@@ -19,6 +19,9 @@ const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
     where: {
       id: resolvedParams.id,
     },
+    include: {
+      category: true,
+    },
   });
 
   if (!product) redirect("/");
@@ -52,7 +55,12 @@ const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
 
       <Separator />
 
-      <ProductsList title="Relacionados" products={related} limit={4} />
+      <ProductsList
+        title="Relacionados"
+        products={JSON.parse(JSON.stringify(related))}
+        limit={4}
+        category={product.category.slug}
+      />
     </>
   );
 };

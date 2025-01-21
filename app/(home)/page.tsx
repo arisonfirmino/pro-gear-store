@@ -9,7 +9,7 @@ const Home = async () => {
     deals,
     mouses,
     keyboards,
-    headsets,
+    headphones,
     mousepads,
     monitors,
     accessories,
@@ -20,13 +20,54 @@ const Home = async () => {
       <Nav />
       <Benefits />
 
-      <ProductsList title="Promoções" products={deals} limit={4} />
-      <ProductsList title="Mouses" products={mouses} limit={4} />
-      <ProductsList title="Teclados" products={keyboards} limit={4} />
-      <ProductsList title="Headsets" products={headsets} limit={4} />
-      <ProductsList title="Mousepads" products={mousepads} limit={4} />
-      <ProductsList title="Monitores" products={monitors} limit={4} />
-      <ProductsList title="Acessórios Gamer" products={accessories} limit={4} />
+      <ProductsList
+        title="Promoções"
+        products={JSON.parse(JSON.stringify(deals))}
+        limit={4}
+        category="deals"
+      />
+
+      <ProductsList
+        title="Mouses"
+        products={JSON.parse(JSON.stringify(mouses))}
+        limit={4}
+        category="mouses"
+      />
+
+      <ProductsList
+        title="Teclados"
+        products={JSON.parse(JSON.stringify(keyboards))}
+        limit={4}
+        category="keyboards"
+      />
+
+      <ProductsList
+        title="Headphones"
+        products={JSON.parse(JSON.stringify(headphones))}
+        limit={4}
+        category="headphones"
+      />
+
+      <ProductsList
+        title="Mousepads"
+        products={JSON.parse(JSON.stringify(mousepads))}
+        limit={4}
+        category="mousepads"
+      />
+
+      <ProductsList
+        title="Monitores"
+        products={JSON.parse(JSON.stringify(monitors))}
+        limit={4}
+        category="monitors"
+      />
+
+      <ProductsList
+        title="Acessórios Gamer"
+        products={JSON.parse(JSON.stringify(accessories))}
+        limit={4}
+        category="accessories"
+      />
     </>
   );
 };
