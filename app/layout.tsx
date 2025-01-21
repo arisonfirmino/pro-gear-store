@@ -4,7 +4,7 @@ import "./globals.css";
 
 import AuthProvider from "@/app/providers/auth";
 import Container from "@/app/components/container";
-import Header from "@/app/(home)/components/header_components/header";
+import Header from "@/app/components/header/header";
 import { Separator } from "@/app/components/ui/separator";
 
 const geistSans = Geist({
