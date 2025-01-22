@@ -1,7 +1,3 @@
-"use client";
-
-import { useState } from "react";
-
 import {
   Select,
   SelectContent,
@@ -9,11 +5,14 @@ import {
   SelectTrigger,
 } from "@/app/components/ui/select";
 
-const ProductQuantity = () => {
-  const [value, setValue] = useState("1");
+interface ProductQuantityProps {
+  value: number;
+  setValue: (value: number) => void;
+}
 
+const ProductQuantity = ({ value, setValue }: ProductQuantityProps) => {
   return (
-    <Select onValueChange={setValue}>
+    <Select onValueChange={(value) => setValue(Number(value))}>
       <SelectTrigger>Quantidade: {value}</SelectTrigger>
       <SelectContent>
         <SelectItem value="1">1</SelectItem>

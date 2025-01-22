@@ -1,7 +1,7 @@
 import Title from "@/app/components/header/title";
 import Search from "@/app/components/header/search";
 import Menu from "@/app/components/header/menu";
-import Cart from "@/app/components/header/cart";
+import Cart from "@/app/components/header/cart/cart";
 
 const Header = () => {
   return (

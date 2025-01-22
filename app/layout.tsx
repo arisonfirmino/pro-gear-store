@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import AuthProvider from "@/app/providers/auth";
+import CartProvider from "@/app/providers/cart";
 import Container from "@/app/components/container";
 import Header from "@/app/components/header/header";
 import { Separator } from "@/app/components/ui/separator";
@@ -33,11 +34,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AuthProvider>
-          <Container>
-            <Header />
-            <Separator />
-            {children}
-          </Container>
+          <CartProvider>
+            <Container>
+              <Header />
+              <Separator />
+              {children}
+            </Container>
+          </CartProvider>
         </AuthProvider>
       </body>
     </html>

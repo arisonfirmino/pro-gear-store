@@ -5,9 +5,7 @@ import { Separator } from "@/app/components/ui/separator";
 import BackButton from "@/app/components/back-button";
 import ProductImages from "@/app/(pages)/product/[id]/components/product-images";
 import ProductInfo from "@/app/(pages)/product/[id]/components/product-info";
-import ProductQuantity from "@/app/(pages)/product/[id]/components/product-quantity";
-import AddCartButton from "@/app/components/product/add-cart-button";
-import CalculateShipping from "@/app/(pages)/product/[id]/components/calculate-shipping";
+import ProductActions from "@/app/(pages)/product/[id]/components/product-actions";
 import ProductsList from "@/app/components/product/products-list";
 
 import { computeProductTotalPrice } from "@/app/helpers/computeProductTotalPrice";
@@ -42,15 +40,18 @@ const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
       <div className="flex flex-col gap-5 xl:flex-row">
         <div className="flex w-full flex-col gap-5 md:flex-row">
           <ProductImages images={product.imageUrls} alt={product.name} />
-          <ProductInfo product={computeProductTotalPrice(product)} />
+          <ProductInfo
+            product={JSON.parse(
+              JSON.stringify(computeProductTotalPrice(product)),
+            )}
+          />
         </div>
 
-        <div className="w-full space-y-5 xl:max-w-xs">
-          <ProductQuantity />
-          <AddCartButton variant="default" />
-          <Separator />
-          <CalculateShipping />
-        </div>
+        <ProductActions
+          product={JSON.parse(
+            JSON.stringify(computeProductTotalPrice(product)),
+          )}
+        />
       </div>
 
       <Separator />
