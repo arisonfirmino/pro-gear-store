@@ -15,6 +15,7 @@ import {
 import { Button } from "@/app/components/ui/button";
 
 import CartItem from "@/app/components/header/cart/cart-item";
+import CartTotals from "@/app/components/header/cart/cart-totals";
 
 import { ShoppingCart, ShoppingCartIcon } from "lucide-react";
 
@@ -34,7 +35,7 @@ const Cart = () => {
           <span className="hidden md:flex">Carrinho</span>
         </Button>
       </SheetTrigger>
-      <SheetContent className={cn("space-y-5")}>
+      <SheetContent className={cn("space-y-5 overflow-y-auto pb-44")}>
         <SheetHeader className={cn("flex items-center justify-between")}>
           <SheetTitle className={cn("flex items-center gap-2")}>
             <ShoppingCart size={16} />
@@ -51,6 +52,8 @@ const Cart = () => {
             </li>
           ))}
         </ul>
+
+        <CartTotals />
       </SheetContent>
     </Sheet>
   );
